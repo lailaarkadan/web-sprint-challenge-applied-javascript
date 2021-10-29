@@ -21,34 +21,37 @@ const Card = (article) => {
   //
   
   const divCard = document.createElement('div');
-  const headline = document.createElement('div');
-  const author = document.createElement('div');
+  const divHeadline = document.createElement('div');
+  const divAuthor = document.createElement('div');
   const imgCon = document.createElement('div');
   const img = document.createElement('img')
-  const authorName = document.createElement('span');
+  const nameAuthor = document.createElement('span');
 
     
-    divCard.classList.add("card");
-    headline.classList.add("headline");
-    author.classList.add("author");
-    imgCon.classList.add("img-container");
+    divCard.classList.add('card');
+    divHeadline.classList.add('headline');
+    divAuthor.classList.add('author');
+    imgCon.classList.add('img-container');
     
-    img.src = article.authorPhoto;
+    img.setAttribute ('src', article.authorPhoto);
 
+    divHeadline.textContent = article.headline;
+    nameAuthor.textContent =`By ${article.authorName}`;
+  
     
-    headline.textContent = article.headline;
-    authorName.textContent =`By ${article.authorName}`;
-  
-  
-    divCard.appendChild(headline);
-    divCard.appendChild(author);
-    author.appendChild(imgCon);
-    authorName.appendChild(authorName);
+    divCard.appendChild(divHeadline);
+    divCard.appendChild(divAuthor);
+    divAuthor.appendChild(imgCon);
+    divAuthor.appendChild(nameAuthor);
     imgCon.appendChild(img);
     
-    divCard.addEventListener("click", (e) => console.log(div1.textContent));
-   return divCard;
-};
+    divCard.addEventListener('click', (event)=>{
+      console.log(divHeadline);
+    })
+    
+    return divCard;
+  }
+
   
     
     const cardAppender = (selector) => {
