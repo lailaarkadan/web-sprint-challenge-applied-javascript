@@ -61,14 +61,21 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+DOM is a programming interface for web documents.DOM can be accessed and manipulated. 
+
 
 2. What is an event?
+
+events are acctions that happen in a system 
 
 
 3. What is an event listener?
 
+event listener course of acction that waits for an event to happen
 
 4. Why would we convert a NodeList into an Array?
 
 
 5. What is a component?
+
+A component comprises several parts: HTML, CSS, or JavaScript brought together for reuse in a website or application.
