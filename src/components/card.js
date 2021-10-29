@@ -40,8 +40,8 @@ const Card = (article) => {
     authorName.textContent =`By ${article.authorName}`;
   
   
-    divCard.appendChild(headLineDiv);
-    divCard.appendChild(authorDiv);
+    divCard.appendChild(headline);
+    divCard.appendChild(author);
     author.appendChild(imgCon);
     authorName.appendChild(authorName);
     imgCon.appendChild(img);
@@ -60,6 +60,11 @@ const Card = (article) => {
       // Create a card from each and every article object in the response, using the Card component.
       // Append each card to the element in the DOM that matches the selector passed to the function.
       //
+     
     }
+    
+    
+    
+    
     export { Card, cardAppender }
 
