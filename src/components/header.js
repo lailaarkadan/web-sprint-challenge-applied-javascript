@@ -24,9 +24,9 @@ spanTemp.className = 'temp';
 
 //content 
 
-spanDate.textContent = `Date:${date}`;
+spanDate.textContent = date;
 h1.textContent = title;
-spanTemp.textContent = `Temp:${temp}`;
+spanTemp.textContent = temp;
 
 //append
 headDiv.appendChild(spanDate);
@@ -46,7 +46,7 @@ const headerAppender = (selector) => {
   //
   document
   .querySelector(selector)
-  .append(Header("Welcome World!", "5/5/1995", '70 degrees'));
+  .append(Header("Welcome World!", "5/5/1995", '70 F'));
 }
 
 export { Header, headerAppender }
