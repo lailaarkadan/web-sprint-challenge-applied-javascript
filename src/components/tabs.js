@@ -1,4 +1,5 @@
 import axios from "axios";
+import { javascript } from "webpack";
 
 
 const Tabs = (topics) => {
@@ -16,22 +17,19 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-
-const div = document.createElement('div');
-div.classList.add('topics');
-
-topics.map( (topic) => {
-  const tabDiv = document.createElement('div');
-  tabDiv.textContent = topic;
-  tabDiv.classList.add('tab');
-  div.appendChild(tabDiv);
-  console.log(div);
-});
-
-return div; 
-
-};
-
+  const div = document.createElement('div');
+  div.classList.add('topics');
+  
+  topics.map( (topic) => {
+    const tabDiv = document.createElement('div');
+    tabDiv.textContent = topic;
+    tabDiv.classList.add('tab');
+    div.appendChild(tabDiv);
+    console.log(div);
+  });
+  return div; 
+  
+  };
 const tabsAppender = (selector) => {
   // TASK 4
   // ---------------------

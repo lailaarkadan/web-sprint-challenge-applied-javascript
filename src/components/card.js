@@ -1,4 +1,5 @@
 import axios from "axios"
+import { articles } from "../mocks/data";
 
 const Card = (article) => {
   // TASK 5
@@ -52,8 +53,9 @@ const Card = (article) => {
     return divCard;
   }
 
-  
-    
+
+
+
     const cardAppender = (selector) => {
       // TASK 6
       // ---------------------
@@ -64,17 +66,14 @@ const Card = (article) => {
       // Append each card to the element in the DOM that matches the selector passed to the function.
       //
      
-      axios
-      .get('http://localhost:5000/api/articles')
-      .then((res) => {
-         for (let i of Object.keys(res.data.articles)) {
-            res.data.articles[i].forEach((article) => {
-               document.querySelector(selector).append(Card(article));
-            });
-         }
+      
+
+axios.get('http://localhost:5000/api/topics')
+      .then(res => {
+        document.querySelector(selector).appendChild(Tabs(articles))
       })
-      .catch((error) => console.log(error));
-};
-   
+      .catch(error => console.log(error))
+
+    }
     export { Card, cardAppender }
 
