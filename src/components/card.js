@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,24 +19,47 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-const divCard = document.createElement('div');
-const headline = document.createElement('div');
-const author = document.createElement('div');
-const imgCon = document.createElement('div');
-const authorName = document.createElement('span');
+  
+  const divCard = document.createElement('div');
+  const headline = document.createElement('div');
+  const author = document.createElement('div');
+  const imgCon = document.createElement('div');
+  const img = document.createElement('img')
+  const authorName = document.createElement('span');
 
+    
+    divCard.classList.add("card");
+    headline.classList.add("headline");
+    author.classList.add("author");
+    imgCon.classList.add("img-container");
+    
+    img.src = article.authorPhoto;
 
-}
+    
+    headline.textContent = article.headline;
+    authorName.textContent =`By ${article.authorName}`;
+  
+  
+    divCard.appendChild(headLineDiv);
+    divCard.appendChild(authorDiv);
+    author.appendChild(imgCon);
+    authorName.appendChild(authorName);
+    imgCon.appendChild(img);
+    
+    divCard.addEventListener("click", (e) => console.log(div1.textContent));
+   return divCard;
+};
+  
+    
+    const cardAppender = (selector) => {
+      // TASK 6
+      // ---------------------
+      // Implement this function that takes a css selector as its only argument.
+      // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
+      // However, the articles do not come organized in a single, neat array. Inspect the response closely!
+      // Create a card from each and every article object in the response, using the Card component.
+      // Append each card to the element in the DOM that matches the selector passed to the function.
+      //
+    }
+    export { Card, cardAppender }
 
-const cardAppender = (selector) => {
-  // TASK 6
-  // ---------------------
-  // Implement this function that takes a css selector as its only argument.
-  // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
-  // However, the articles do not come organized in a single, neat array. Inspect the response closely!
-  // Create a card from each and every article object in the response, using the Card component.
-  // Append each card to the element in the DOM that matches the selector passed to the function.
-  //
-}
-
-export { Card, cardAppender }
